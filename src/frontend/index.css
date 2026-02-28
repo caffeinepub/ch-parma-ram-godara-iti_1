@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts ─────────────────────────────────────────────── */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Navy blue base */
+    --background: 0.97 0.006 250;
+    --foreground: 0.18 0.04 260;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 260;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 260;
+
+    /* Deep navy primary */
+    --primary: 0.25 0.08 260;
+    --primary-foreground: 0.98 0 0;
+
+    /* Warm saffron secondary */
+    --secondary: 0.94 0.05 75;
+    --secondary-foreground: 0.2 0.06 60;
+
+    --muted: 0.93 0.01 240;
+    --muted-foreground: 0.5 0.03 250;
+
+    /* Saffron accent */
+    --accent: 0.75 0.18 55;
+    --accent-foreground: 0.15 0.04 260;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 250;
+    --input: 0.88 0.02 250;
+    --ring: 0.5 0.1 260;
+
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Custom institute tokens */
+    --navy: 0.22 0.07 263;
+    --navy-dark: 0.16 0.06 265;
+    --navy-light: 0.35 0.08 258;
+    --saffron: 0.76 0.19 55;
+    --saffron-light: 0.88 0.14 70;
+    --india-green: 0.52 0.14 152;
+    --whatsapp: 0.57 0.17 145;
+    --whatsapp-dark: 0.45 0.15 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ─── Custom Utilities ────────────────────────────────────── */
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .text-navy {
+    color: oklch(var(--navy));
+  }
+
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+
+  .bg-navy-dark {
+    background-color: oklch(var(--navy-dark));
+  }
+
+  .bg-navy-light {
+    background-color: oklch(var(--navy-light));
+  }
+
+  .text-saffron {
+    color: oklch(var(--saffron));
+  }
+
+  .bg-saffron {
+    background-color: oklch(var(--saffron));
+  }
+
+  .bg-saffron-light {
+    background-color: oklch(var(--saffron-light));
+  }
+
+  .text-india-green {
+    color: oklch(var(--india-green));
+  }
+
+  .bg-india-green {
+    background-color: oklch(var(--india-green));
+  }
+
+  .bg-whatsapp {
+    background-color: oklch(var(--whatsapp));
+  }
+
+  .bg-whatsapp-dark {
+    background-color: oklch(var(--whatsapp-dark));
+  }
+
+  .text-whatsapp {
+    color: oklch(var(--whatsapp));
+  }
+
+  .border-saffron {
+    border-color: oklch(var(--saffron));
+  }
+
+  .border-navy {
+    border-color: oklch(var(--navy));
+  }
+
+  .shadow-navy {
+    box-shadow: 0 4px 20px oklch(var(--navy) / 0.25);
+  }
+
+  .shadow-saffron {
+    box-shadow: 0 4px 20px oklch(var(--saffron) / 0.3);
+  }
+
+  .india-stripe {
+    background: linear-gradient(
+      to right,
+      oklch(var(--saffron)) 33.3%,
+      oklch(0.98 0 0) 33.3%,
+      oklch(0.98 0 0) 66.6%,
+      oklch(var(--india-green)) 66.6%
+    );
+  }
+
+  .section-padding {
+    @apply py-16 px-4 md:py-20 md:px-8;
+  }
+}
